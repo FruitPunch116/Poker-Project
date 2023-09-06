@@ -1,6 +1,6 @@
 # TESTING PROCESS TO GET THE WINDOWS SIZE
 
-"""import pygame
+import pygame
 
 pygame.init()
 screen = pygame.display.set_mode((1750,900))
@@ -9,7 +9,7 @@ SCREEN_WIDHT, SCREEN_HEIGHT = pygame.display.get_surface().get_size()
 
 
 background = pygame.transform.scale(background, (SCREEN_WIDHT, SCREEN_HEIGHT))
-
+d
 
 run = True
 
@@ -22,7 +22,9 @@ while run:
     screen.blit(background, (0,0))
     pygame.display.update()
 
-pygame.quit()"""
+pygame.quit()
+
+#fidsjajfdlsajflkdsajlk
 
 # CODE TO PLAY ALONG (WINDOWS SIZE)
 """
