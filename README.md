@@ -3,8 +3,12 @@
 Before you get started make sure you are in the proper branch, use the command `git branch` to see the current branch
 to switch the designed branch use `git checkout BRANCH_NAME`.
 
-If new changes have been added to the `main` branch before you start working try doing `git fetch` on your terminal 
-to get the most recent version of the code without having to worry about loosing any previous code done.
+If new changes have been added to the `main` branch before you start working try doing `git fetch` on your withing the `main` branch 
+inside your terminal to get the most recent version of the code without having to worry about loosing any previous code done.
+
+Use `git pull` to get the branch information.
+
+The command `git checkout origin/BRANCH_NAME -- FILE-NAME` is used to get information or files from a dessired branch.
 
 Try not to use the `main` branch at least that part of there project is complete.
 
