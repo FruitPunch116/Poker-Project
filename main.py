@@ -1,62 +1,44 @@
 # TESTING PROCESS TO GET THE WINDOWS SIZE
 
 import pygame
+from classes.button import Button
 
 pygame.init()
+pygame.display.set_caption("Poker")
 screen = pygame.display.set_mode((1750,900))
-background = pygame.image.load("assets/poker-table.asset.jpeg").convert_alpha()
+main_menu_background = pygame.image.load("assets/main_menu_background.jpeg").convert_alpha()
 SCREEN_WIDHT, SCREEN_HEIGHT = pygame.display.get_surface().get_size()
 
 
-background = pygame.transform.scale(background, (SCREEN_WIDHT, SCREEN_HEIGHT))
-d
+background = pygame.transform.scale(main_menu_background, (SCREEN_WIDHT, SCREEN_HEIGHT))
+text_font = pygame.font.SysFont("Baskerville",200)
+start_button = None
 
-run = True
-
-while run:
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+def draw_text(text, font, text_col, x, y):
+    text = font.render(text, True, text_col)
+    screen.blit(text, (x,y))
     
-    screen.blit(background, (0,0))
-    pygame.display.update()
+
+def main_menu():
+    pygame.display.set_caption("Poker Main Menu")
+    
+    while True:
+        
+        screen.blit(main_menu_background, (0,0))
+        menu_mouse_position = pygame.mouse.get_pos()
+
+        start_img = pygame.image.load("assets/start-button.png").convert_alpha()
+        start_button = Button(725, 500, start_img, 0.5)
+    
+        for event in pygame.event.get():  
+            if event.type == pygame.QUIT:
+                pygame.quit()
+    
+            screen.blit(background, (0,0))
+            start_button.draw(screen)
+            draw_text("FREE POKER", text_font, (255,255,255), 250, 150)
+            pygame.display.update()
+
+main_menu()
 
 pygame.quit()
-
-#fidsjajfdlsajflkdsajlk
-
-# CODE TO PLAY ALONG (WINDOWS SIZE)
-"""
-#imports
-import pygame
-from pygame.locals import *
-pygame.init()
-
-#bounds definition
-STARTWIDTH, STARTHEIGHT = 200, 200
-MAXWIDTH, MAXHEIGHT = 200, 200
-MINWIDTH, MINHEIGHT = 200, 200
-
-#variables
-screen = pygame.display.set_mode((STARTWIDTH, STARTHEIGHT), RESIZABLE)
-running = True
-
-while running:
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            running = False
-
-        elif event.type == VIDEORESIZE:
-
-            width = min(MAXWIDTH, max(MINWIDTH, event.w))
-            height = min(MAXHEIGHT, max(MINHEIGHT, event.h))
-
-            if (width, height) != event.size:
-                screen = pygame.display.set_mode((width, height), RESIZABLE)
-
-    screen.fill((255,255,255))
-    pygame.display.update()
-
-pygame.quit()
-"""
