@@ -68,7 +68,7 @@ pygame.display.set_caption("Blackjack")
 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
 
 screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-main_menu_background = pygame.image.load("assets/blackjack_background.jpeg").convert_alpha()
+main_menu_background = pygame.image.load("assets/background.jpeg").convert_alpha()
 screen_width, screen_height = pygame.display.get_surface().get_size()
 background = pygame.transform.scale(main_menu_background, (screen_width, screen_height))
 text_font = pygame.font.SysFont("Futura",60)
